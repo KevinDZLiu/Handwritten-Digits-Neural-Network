@@ -127,13 +127,19 @@ class Network(object):
         partial a for the output activations.
         """
         return (output_activations-y)
+    
+    def recognise(self, input):
+        """
+        Return the int output of given input into neural network.
+        """
+        return np.argmax(self.feedforward(input))
 
     def evaluate(self, test_data):
         """
         Return number of test inputs for which the neural
         network outputs the correct result.
         """
-        test_results = [(np.argmax(self.feedforward(x)), y)
+        test_results = [(self.recognise(x), y)
                         for (x, y) in test_data]
         return sum(int(x == y) for (x, y) in test_results)
 

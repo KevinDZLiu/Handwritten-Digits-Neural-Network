@@ -1,6 +1,7 @@
 import numpy as np
 from tensorflow.keras.datasets import mnist
 from tensorflow.keras.utils import to_categorical
+import matplotlib.pyplot as plt
 
 
 def load_and_wrap():
@@ -30,6 +31,10 @@ def load_and_wrap():
     # --- Create Training Data ---
     # Normalize and reshape the training images
     tr_images = tr_images / 255.0  # Normalize pixel values
+    # poo=1421
+    # plt.imshow(tr_images[poo], cmap='gray')
+    # plt.show()
+    # print(tr_labels[poo])
     training_inputs = [np.reshape(x, (784, 1)) for x in tr_images]
 
     # One-hot encode the training labels
