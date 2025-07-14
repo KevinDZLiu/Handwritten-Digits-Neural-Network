@@ -31,6 +31,7 @@ def load_and_wrap():
     # --- Create Training Data ---
     # Normalize and reshape the training images
     tr_images = tr_images / 255.0  # Normalize pixel values
+    # picture of object
     # poo=1421
     # plt.imshow(tr_images[poo], cmap='gray')
     # plt.show()
